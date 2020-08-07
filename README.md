@@ -9,12 +9,13 @@ I use a continuity tester to verify my wiring when I build an electronic prototy
 - Low test current doesn't damage delecate connections
 - small size
 - rechargeable battery
+
 Additional constraints:
 - Use parts already on hand only, no parts shopping for this project
 - Firmware can be updated easily
 
 ## Theory of Operations
-Three resistors in series  form a voltage divider.   It draws about 1 ma from the 5V supply.   The middle ("sense") resistor is chosen to drop about 150 millivolts (mV) and its pins are brought out to test leads.   The analog to digital converter in the Arduino resolves voltage in 5 mV increments.  The Arduino firmware periodically (a few KHz) measures the drop on the sense resistor.  If the semse resistor is shorted, the 1 ma flows through the short instead of the sense resistor.   A connection is indicated if the difference between the test leads falls to less than 20 mV.
+Three resistors in series (R2,R3,R4) form a voltage divider.   It draws about 1 ma from the 5V supply.   The middle ("sense") resistor R3 is chosen to drop about 150 millivolts (mV) and its pins are brought out to test leads.   The analog to digital converter in the Arduino resolves voltage in 5 mV increments.  The Arduino firmware periodically (a few KHz) measures the drop on the sense resistor.  If the sense resistor is shorted, the 1 ma flows through the short instead of the sense resistor.   A connection is indicated if the difference between the test leads falls to less than 20 mV.
 
 ## other stuff
 ### power supply
